@@ -1,4 +1,4 @@
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_98F48A3C-1FFF-4B97-A82E-9EA4C7153E28" exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_FwJVUOxKEDeOaLscBE7tPA" exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_travellerItem" structureRef="org.acme.travels.Traveller"/>
   <bpmn2:itemDefinition id="_tripItem" structureRef="org.acme.travels.Trip"/>
   <bpmn2:itemDefinition id="_hotelItem" structureRef="org.acme.travels.Hotel"/>
@@ -56,22 +56,22 @@
           <drools:metaValue>visa required</drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_x-6icOhXEDeY7811eHwIrw" language="http://www.java.com/java">return trip.isVisaRequired();</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_FwON0OxKEDeOaLscBE7tPA" language="http://www.java.com/java">return trip.isVisaRequired();</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
-    <bpmn2:sequenceFlow id="SequenceFlow_5" sourceRef="UserTask_1" targetRef="ExclusiveGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_4" name="no need for visa" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_2">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue>no need for visa</drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_x-6icehXEDeY7811eHwIrw" language="http://www.java.com/java">return !trip.isVisaRequired();</bpmn2:conditionExpression>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_FwON0exKEDeOaLscBE7tPA" language="http://www.java.com/java">return !trip.isVisaRequired();</bpmn2:conditionExpression>
     </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_5" sourceRef="UserTask_1" targetRef="ExclusiveGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_6" sourceRef="ExclusiveGateway_2" targetRef="ParallelGateway_1"/>
     <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="ParallelGateway_1" targetRef="CallActivity_1"/>
     <bpmn2:sequenceFlow id="SequenceFlow_8" sourceRef="ParallelGateway_1" targetRef="CallActivity_2"/>
-    <bpmn2:sequenceFlow id="SequenceFlow_10" sourceRef="CallActivity_1" targetRef="ParallelGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_9" sourceRef="CallActivity_2" targetRef="ParallelGateway_2"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_10" sourceRef="CallActivity_1" targetRef="ParallelGateway_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_11" sourceRef="ParallelGateway_2" targetRef="UserTask_2"/>
     <bpmn2:sequenceFlow id="SequenceFlow_12" sourceRef="UserTask_2" targetRef="EndEvent_1"/>
     <bpmn2:startEvent id="StartEvent_1" name="StartProcess">
@@ -90,27 +90,27 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_2</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_x-7JgOhXEDeY7811eHwIrw">
+      <bpmn2:ioSpecification id="_FwPb8OxKEDeOaLscBE7tPA">
         <bpmn2:dataInput id="BusinessRuleTask_1_travellerInputX" drools:dtype="org.acme.travels.Traveller" itemSubjectRef="_BusinessRuleTask_1_travellerInputXItem" name="traveller"/>
         <bpmn2:dataInput id="BusinessRuleTask_1_tripInputX" drools:dtype="org.acme.travels.Trip" itemSubjectRef="_BusinessRuleTask_1_tripInputXItem" name="trip"/>
         <bpmn2:dataOutput id="BusinessRuleTask_1_tripOutputX" drools:dtype="org.acme.travels.Trip" itemSubjectRef="_BusinessRuleTask_1_tripOutputXItem" name="trip"/>
-        <bpmn2:inputSet id="_x-7wkOhXEDeY7811eHwIrw">
+        <bpmn2:inputSet id="_FwPb8exKEDeOaLscBE7tPA">
           <bpmn2:dataInputRefs>BusinessRuleTask_1_travellerInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>BusinessRuleTask_1_tripInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_x-7wkehXEDeY7811eHwIrw">
+        <bpmn2:outputSet id="_FwPb8uxKEDeOaLscBE7tPA">
           <bpmn2:dataOutputRefs>BusinessRuleTask_1_tripOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_x-7wkuhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwQDAOxKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>traveller</bpmn2:sourceRef>
         <bpmn2:targetRef>BusinessRuleTask_1_travellerInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x-7wk-hXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwQDAexKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>trip</bpmn2:sourceRef>
         <bpmn2:targetRef>BusinessRuleTask_1_tripInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_x-7wlOhXEDeY7811eHwIrw">
+      <bpmn2:dataOutputAssociation id="_FwQDAuxKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>BusinessRuleTask_1_tripOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>trip</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
@@ -133,13 +133,13 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_x-8XoOhXEDeY7811eHwIrw">
+      <bpmn2:ioSpecification id="_FwQqEOxKEDeOaLscBE7tPA">
         <bpmn2:dataInput id="UserTask_1_TaskNameInputX" drools:dtype="Object" itemSubjectRef="_UserTask_1_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="UserTask_1_tripInputX" drools:dtype="org.acme.travels.Trip" itemSubjectRef="_UserTask_1_tripInputXItem" name="trip"/>
         <bpmn2:dataInput id="UserTask_1_travellerInputX" drools:dtype="org.acme.travels.Traveller" itemSubjectRef="_UserTask_1_travellerInputXItem" name="traveller"/>
         <bpmn2:dataInput id="UserTask_1_SkippableInputX" drools:dtype="Object" itemSubjectRef="_UserTask_1_SkippableInputXItem" name="Skippable"/>
         <bpmn2:dataInput id="UserTask_1_PriorityInputX" drools:dtype="Object" itemSubjectRef="_UserTask_1_PriorityInputXItem" name="Priority"/>
-        <bpmn2:inputSet id="_x-8XoehXEDeY7811eHwIrw">
+        <bpmn2:inputSet id="_FwRRIOxKEDeOaLscBE7tPA">
           <bpmn2:dataInputRefs>UserTask_1_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_1_tripInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_1_travellerInputX</bpmn2:dataInputRefs>
@@ -147,39 +147,39 @@
           <bpmn2:dataInputRefs>UserTask_1_PriorityInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_x-8XouhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwRRIexKEDeOaLscBE7tPA">
         <bpmn2:targetRef>UserTask_1_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_x-8Xo-hXEDeY7811eHwIrw">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_x-8-sOhXEDeY7811eHwIrw">VisaApplication</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_x-8-sehXEDeY7811eHwIrw">UserTask_1_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_FwRRIuxKEDeOaLscBE7tPA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_FwRRI-xKEDeOaLscBE7tPA">VisaApplication</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_FwR4MOxKEDeOaLscBE7tPA">UserTask_1_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x-8-suhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwR4MexKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>trip</bpmn2:sourceRef>
         <bpmn2:targetRef>UserTask_1_tripInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x-8-s-hXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwR4MuxKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>traveller</bpmn2:sourceRef>
         <bpmn2:targetRef>UserTask_1_travellerInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x-8-tOhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwR4M-xKEDeOaLscBE7tPA">
         <bpmn2:targetRef>UserTask_1_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_x-8-tehXEDeY7811eHwIrw">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_x-8-tuhXEDeY7811eHwIrw">true</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_x-8-t-hXEDeY7811eHwIrw">UserTask_1_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_FwR4NOxKEDeOaLscBE7tPA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_FwR4NexKEDeOaLscBE7tPA">true</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_FwR4NuxKEDeOaLscBE7tPA">UserTask_1_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x-8-uOhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwR4N-xKEDeOaLscBE7tPA">
         <bpmn2:targetRef>UserTask_1_PriorityInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_x-8-uehXEDeY7811eHwIrw">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_x-8-uuhXEDeY7811eHwIrw">1</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_x-8-u-hXEDeY7811eHwIrw">UserTask_1_PriorityInputX</bpmn2:to>
+        <bpmn2:assignment id="_FwR4OOxKEDeOaLscBE7tPA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_FwR4OexKEDeOaLscBE7tPA">1</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_FwR4OuxKEDeOaLscBE7tPA">UserTask_1_PriorityInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:userTask>
     <bpmn2:exclusiveGateway id="ExclusiveGateway_2" gatewayDirection="Converging">
-      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
     <bpmn2:parallelGateway id="ParallelGateway_1" name="Book" gatewayDirection="Diverging">
@@ -200,27 +200,27 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_10</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_x-9lwOhXEDeY7811eHwIrw">
+      <bpmn2:ioSpecification id="_FwSfQOxKEDeOaLscBE7tPA">
         <bpmn2:dataInput id="CallActivity_1_travellerInputX" drools:dtype="org.acme.travels.Traveller" itemSubjectRef="_CallActivity_1_travellerInputXItem" name="traveller"/>
         <bpmn2:dataInput id="CallActivity_1_tripInputX" drools:dtype="org.acme.travels.Trip" itemSubjectRef="_CallActivity_1_tripInputXItem" name="trip"/>
         <bpmn2:dataOutput id="CallActivity_1_hotelOutputX" drools:dtype="org.acme.travels.Hotel" itemSubjectRef="_CallActivity_1_hotelOutputXItem" name="hotel"/>
-        <bpmn2:inputSet id="_x-9lwehXEDeY7811eHwIrw">
+        <bpmn2:inputSet id="_FwSfQexKEDeOaLscBE7tPA">
           <bpmn2:dataInputRefs>CallActivity_1_travellerInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>CallActivity_1_tripInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_x-9lwuhXEDeY7811eHwIrw">
+        <bpmn2:outputSet id="_FwTGUOxKEDeOaLscBE7tPA">
           <bpmn2:dataOutputRefs>CallActivity_1_hotelOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_x-9lw-hXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwTGUexKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>traveller</bpmn2:sourceRef>
         <bpmn2:targetRef>CallActivity_1_travellerInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x-9lxOhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwTGUuxKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>trip</bpmn2:sourceRef>
         <bpmn2:targetRef>CallActivity_1_tripInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_x-9lxehXEDeY7811eHwIrw">
+      <bpmn2:dataOutputAssociation id="_FwTGU-xKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>CallActivity_1_hotelOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>hotel</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
@@ -233,34 +233,34 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_x--M0OhXEDeY7811eHwIrw">
+      <bpmn2:ioSpecification id="_FwTtYOxKEDeOaLscBE7tPA">
         <bpmn2:dataInput id="CallActivity_2_travellerInputX" drools:dtype="org.acme.travels.Traveller" itemSubjectRef="_CallActivity_2_travellerInputXItem" name="traveller"/>
         <bpmn2:dataInput id="CallActivity_2_tripInputX" drools:dtype="org.acme.travels.Trip" itemSubjectRef="_CallActivity_2_tripInputXItem" name="trip"/>
         <bpmn2:dataOutput id="CallActivity_2_flightOutputX" drools:dtype="org.acme.travels.Flight" itemSubjectRef="_CallActivity_2_flightOutputXItem" name="flight"/>
-        <bpmn2:inputSet id="_x--M0ehXEDeY7811eHwIrw">
+        <bpmn2:inputSet id="_FwTtYexKEDeOaLscBE7tPA">
           <bpmn2:dataInputRefs>CallActivity_2_travellerInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>CallActivity_2_tripInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
-        <bpmn2:outputSet id="_x--M0uhXEDeY7811eHwIrw">
+        <bpmn2:outputSet id="_FwTtYuxKEDeOaLscBE7tPA">
           <bpmn2:dataOutputRefs>CallActivity_2_flightOutputX</bpmn2:dataOutputRefs>
         </bpmn2:outputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_x--M0-hXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwTtY-xKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>traveller</bpmn2:sourceRef>
         <bpmn2:targetRef>CallActivity_2_travellerInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x--M1OhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwTtZOxKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>trip</bpmn2:sourceRef>
         <bpmn2:targetRef>CallActivity_2_tripInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataOutputAssociation id="_x--M1ehXEDeY7811eHwIrw">
+      <bpmn2:dataOutputAssociation id="_FwTtZexKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>CallActivity_2_flightOutputX</bpmn2:sourceRef>
         <bpmn2:targetRef>flight</bpmn2:targetRef>
       </bpmn2:dataOutputAssociation>
     </bpmn2:callActivity>
     <bpmn2:parallelGateway id="ParallelGateway_2" gatewayDirection="Converging">
-      <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
+      <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:userTask id="UserTask_2" name="Confirm travel">
@@ -271,13 +271,13 @@
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_12</bpmn2:outgoing>
-      <bpmn2:ioSpecification id="_x--M1uhXEDeY7811eHwIrw">
+      <bpmn2:ioSpecification id="_FwUUcOxKEDeOaLscBE7tPA">
         <bpmn2:dataInput id="UserTask_2_TaskNameInputX" drools:dtype="Object" itemSubjectRef="_UserTask_2_TaskNameInputXItem" name="TaskName"/>
         <bpmn2:dataInput id="UserTask_2_flightInputX" drools:dtype="org.acme.travels.Flight" itemSubjectRef="_UserTask_2_flightInputXItem" name="flight"/>
         <bpmn2:dataInput id="UserTask_2_hotelInputX" drools:dtype="org.acme.travels.Hotel" itemSubjectRef="_UserTask_2_hotelInputXItem" name="hotel"/>
         <bpmn2:dataInput id="UserTask_2_SkippableInputX" drools:dtype="Object" itemSubjectRef="_UserTask_2_SkippableInputXItem" name="Skippable"/>
         <bpmn2:dataInput id="UserTask_2_PriorityInputX" drools:dtype="Object" itemSubjectRef="_UserTask_2_PriorityInputXItem" name="Priority"/>
-        <bpmn2:inputSet id="_x--z4OhXEDeY7811eHwIrw">
+        <bpmn2:inputSet id="_FwUUcexKEDeOaLscBE7tPA">
           <bpmn2:dataInputRefs>UserTask_2_TaskNameInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_2_flightInputX</bpmn2:dataInputRefs>
           <bpmn2:dataInputRefs>UserTask_2_hotelInputX</bpmn2:dataInputRefs>
@@ -285,33 +285,33 @@
           <bpmn2:dataInputRefs>UserTask_2_PriorityInputX</bpmn2:dataInputRefs>
         </bpmn2:inputSet>
       </bpmn2:ioSpecification>
-      <bpmn2:dataInputAssociation id="_x--z4ehXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwUUcuxKEDeOaLscBE7tPA">
         <bpmn2:targetRef>UserTask_2_TaskNameInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_x--z4uhXEDeY7811eHwIrw">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_x--z4-hXEDeY7811eHwIrw">ConfirmTravel</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_x--z5OhXEDeY7811eHwIrw">UserTask_2_TaskNameInputX</bpmn2:to>
+        <bpmn2:assignment id="_FwUUc-xKEDeOaLscBE7tPA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_FwU7gOxKEDeOaLscBE7tPA">ConfirmTravel</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_FwU7gexKEDeOaLscBE7tPA">UserTask_2_TaskNameInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x--z5ehXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwU7guxKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>flight</bpmn2:sourceRef>
         <bpmn2:targetRef>UserTask_2_flightInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x--z5uhXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwU7g-xKEDeOaLscBE7tPA">
         <bpmn2:sourceRef>hotel</bpmn2:sourceRef>
         <bpmn2:targetRef>UserTask_2_hotelInputX</bpmn2:targetRef>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x--z5-hXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwU7hOxKEDeOaLscBE7tPA">
         <bpmn2:targetRef>UserTask_2_SkippableInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_x--z6OhXEDeY7811eHwIrw">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_x--z6ehXEDeY7811eHwIrw">true</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_x--z6uhXEDeY7811eHwIrw">UserTask_2_SkippableInputX</bpmn2:to>
+        <bpmn2:assignment id="_FwU7hexKEDeOaLscBE7tPA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_FwU7huxKEDeOaLscBE7tPA">true</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_FwU7h-xKEDeOaLscBE7tPA">UserTask_2_SkippableInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
-      <bpmn2:dataInputAssociation id="_x--z6-hXEDeY7811eHwIrw">
+      <bpmn2:dataInputAssociation id="_FwU7iOxKEDeOaLscBE7tPA">
         <bpmn2:targetRef>UserTask_2_PriorityInputX</bpmn2:targetRef>
-        <bpmn2:assignment id="_x--z7OhXEDeY7811eHwIrw">
-          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_x--z7ehXEDeY7811eHwIrw">1</bpmn2:from>
-          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_x--z7uhXEDeY7811eHwIrw">UserTask_2_PriorityInputX</bpmn2:to>
+        <bpmn2:assignment id="_FwU7iexKEDeOaLscBE7tPA">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_FwU7iuxKEDeOaLscBE7tPA">1</bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_FwU7i-xKEDeOaLscBE7tPA">UserTask_2_PriorityInputX</bpmn2:to>
         </bpmn2:assignment>
       </bpmn2:dataInputAssociation>
     </bpmn2:userTask>
@@ -348,7 +348,7 @@
         <dc:Bounds height="56" width="56" x="568" y="384"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_UserTask_1" bpmnElement="UserTask_1">
-        <dc:Bounds height="50" width="110" x="409" y="201"/>
+        <dc:Bounds height="50" width="110" x="415" y="120"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="shape_ExclusiveGateway_1" bpmnElement="ExclusiveGateway_1">
         <dc:Bounds height="56" width="56" x="293" y="379"/>
@@ -369,15 +369,15 @@
         <di:waypoint x="1034" y="295"/>
         <di:waypoint x="1066" y="295"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="edge_shape_CallActivity_2_to_shape_ParallelGateway_2" bpmnElement="SequenceFlow_9">
-        <di:waypoint x="893" y="370"/>
-        <di:waypoint x="977" y="370"/>
-        <di:waypoint x="977" y="320"/>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape_CallActivity_1_to_shape_ParallelGateway_2" bpmnElement="SequenceFlow_10">
         <di:waypoint x="893" y="145"/>
         <di:waypoint x="977" y="205"/>
         <di:waypoint x="977" y="270"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_CallActivity_2_to_shape_ParallelGateway_2" bpmnElement="SequenceFlow_9">
+        <di:waypoint x="893" y="370"/>
+        <di:waypoint x="977" y="370"/>
+        <di:waypoint x="977" y="320"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape_ParallelGateway_1_to_shape_CallActivity_2" bpmnElement="SequenceFlow_8">
         <di:waypoint x="723" y="314"/>
@@ -394,19 +394,19 @@
         <di:waypoint x="652" y="295"/>
         <di:waypoint x="698" y="289"/>
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_UserTask_1_to_shape_ExclusiveGateway_2" bpmnElement="SequenceFlow_5">
+        <di:waypoint x="525" y="145"/>
+        <di:waypoint x="590" y="225"/>
+        <di:waypoint x="593" y="384"/>
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape_ExclusiveGateway_1_to_shape_ExclusiveGateway_2" bpmnElement="SequenceFlow_4">
         <di:waypoint x="343" y="404"/>
         <di:waypoint x="568" y="409"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="edge_shape_UserTask_1_to_shape_ExclusiveGateway_2" bpmnElement="SequenceFlow_5">
-        <di:waypoint x="519" y="226"/>
-        <di:waypoint x="590" y="225"/>
-        <di:waypoint x="593" y="384"/>
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape_ExclusiveGateway_1_to_shape_UserTask_1" bpmnElement="SequenceFlow_3">
         <di:waypoint x="318" y="379"/>
         <di:waypoint x="325" y="225"/>
-        <di:waypoint x="409" y="226"/>
+        <di:waypoint x="415" y="145"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="edge_shape_BusinessRuleTask_1_to_shape_ExclusiveGateway_1" bpmnElement="SequenceFlow_2">
         <di:waypoint x="255" y="295"/>
@@ -420,7 +420,7 @@
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
-  <bpmn2:relationship id="_x_B3MOhXEDeY7811eHwIrw" type="BPSimData">
+  <bpmn2:relationship id="_FwWwsOxKEDeOaLscBE7tPA" type="BPSimData">
     <bpmn2:extensionElements>
       <bpsim:BPSimData>
         <bpsim:Scenario id="default" name="Simulationscenario">
@@ -535,7 +535,7 @@
         </bpsim:Scenario>
       </bpsim:BPSimData>
     </bpmn2:extensionElements>
-    <bpmn2:source>_98F48A3C-1FFF-4B97-A82E-9EA4C7153E28</bpmn2:source>
-    <bpmn2:target>_98F48A3C-1FFF-4B97-A82E-9EA4C7153E28</bpmn2:target>
+    <bpmn2:source>_FwJVUOxKEDeOaLscBE7tPA</bpmn2:source>
+    <bpmn2:target>_FwJVUOxKEDeOaLscBE7tPA</bpmn2:target>
   </bpmn2:relationship>
 </bpmn2:definitions>
